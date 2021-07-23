@@ -5,3 +5,4 @@ yarn-error.log
 .git
 .vscode
 build
+.env

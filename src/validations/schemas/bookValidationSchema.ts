@@ -20,8 +20,6 @@ export const createBookSchema = object({
   ...payload,
 });
 
-export const getBookSchema = {
-  params: object({
-    id: string().required("Id is required"),
-  }),
-};
+export const getBookSchema = object({
+  ...params,
+});

@@ -9,7 +9,7 @@ import {
 
 export const booksRouter = Router();
 
-booksRouter.get("/", (req: Request, res: Response) => {
+booksRouter.get("/list", (req: Request, res: Response) => {
   return res.send("ok");
 });
 

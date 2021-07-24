@@ -8,7 +8,9 @@ class CreateBookUseCase {
   async execute(body: IBook): Promise<IBook> {
     const bookServices = new BookServices();
     const book = await bookServices.create(body as any);
-    if (!book) throw new AppError("Error on creating a new book");
+    if (!book) {
+      throw new AppError("Error on creating a new book");
+    }
     return book;
   }
 }

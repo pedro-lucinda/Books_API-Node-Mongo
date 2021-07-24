@@ -8,12 +8,8 @@ class CreateBookController {
     const createBookUseCase = new CreateBookUseCase();
     const { body } = req;
 
-    try {
-      const book = await createBookUseCase.execute(body);
-      return res.status(201).json(book);
-    } catch (err) {
-      return res.status(400).json("Error");
-    }
+    const book = await createBookUseCase.execute(body);
+    return res.status(201).json(book);
   }
 }
 

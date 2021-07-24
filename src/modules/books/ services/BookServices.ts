@@ -1,5 +1,6 @@
 import { DocumentDefinition } from "mongoose";
 
+import { AppError } from "../../../errors/AppError";
 import { BookModel } from "../models/book.model";
 import { IBook, IBookServices } from "./IBookServices";
 
@@ -10,8 +11,12 @@ class BookServices implements IBookServices {
   }
 
   async findById(id: string): Promise<IBook> {
-    const book = BookModel.findOne(id);
-    return book;
+    try {
+      const book = await BookModel.findById({ _id: id });
+      return book;
+    } catch (err) {
+      throw new AppError("Book not found");
+    }
   }
 
   async create(body: DocumentDefinition<IBook>): Promise<IBook> {

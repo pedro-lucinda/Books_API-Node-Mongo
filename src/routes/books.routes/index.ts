@@ -2,6 +2,7 @@ import { Router, Request, Response } from "express";
 
 import { validate } from "../../middlewares/validateRequest";
 import { CreateBookController } from "../../modules/books/useCases/createBook/CreateBookController";
+import { GetBookController } from "../../modules/books/useCases/getBook/GetBookController";
 import { ListBooksController } from "../../modules/books/useCases/listBooks/ListBooksController";
 import {
   createBookSchema,
@@ -19,7 +20,8 @@ booksRouter.get(
   "/:id",
   validate(getBookSchema),
   (req: Request, res: Response) => {
-    return res.send("getone");
+    const getBookController = new GetBookController();
+    return getBookController.handle(req, res);
   }
 );
 

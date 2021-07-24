@@ -7,13 +7,9 @@ import { AppError } from "../../../../errors/AppError";
 class CreateBookUseCase {
   async execute(body: IBook): Promise<IBook> {
     const bookServices = new BookServices();
-    try {
-      const book = await bookServices.create(body as any);
-
-      return book;
-    } catch (err) {
-      throw new AppError("Error on creating a new book");
-    }
+    const book = await bookServices.create(body as any);
+    if (!book) throw new AppError("Error on creating a new book");
+    return book;
   }
 }
 export { CreateBookUseCase };

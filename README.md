@@ -10,10 +10,18 @@
 
 ## 2. Requirements
 
+- [x] Able to List books
+- [x] Pagination on book's listing
+- [x] Able to create book
+- [x] Able to get a single book information
+
 ## 3. Techs
+
 - NodeJS
-- MongoDB
+- Express
+- Mongoose
 - Yarn
+- Yup
 - Typescript
 - Eslint
 - Prettier

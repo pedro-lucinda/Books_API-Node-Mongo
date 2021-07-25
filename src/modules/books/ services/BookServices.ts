@@ -2,11 +2,20 @@ import { DocumentDefinition } from "mongoose";
 
 import { AppError } from "../../../errors/AppError";
 import { BookModel } from "../models/book.model";
-import { IBook, IBookServices } from "./IBookServices";
+import { IBook, IBookServices, IListBooksDTO } from "./IBookServices";
 
 class BookServices implements IBookServices {
-  async list(): Promise<IBook[]> {
-    const books = await BookModel.find();
+  async list({ perPage, page }: IListBooksDTO): Promise<IBook[]> {
+    const pageToList = page - 1 || 0;
+    const perPageToList = perPage || 10;
+
+    const books = await BookModel.find()
+      .limit(perPageToList)
+      .skip(pageToList * perPageToList)
+      .sort({
+        createdAt: "asc",
+      });
+
     return books;
   }
 

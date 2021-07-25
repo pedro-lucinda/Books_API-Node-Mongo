@@ -8,8 +8,13 @@ export interface IBook {
   author: string;
 }
 
+export interface IListBooksDTO {
+  perPage?: number;
+  page?: number;
+}
+
 interface IBookServices {
-  list(): Promise<IBook[]>;
+  list({ perPage, page }: IListBooksDTO): Promise<IBook[]>;
   create(body: DocumentDefinition<IBookDocument>): Promise<IBook>;
   findById(id: string): Promise<IBook>;
 }

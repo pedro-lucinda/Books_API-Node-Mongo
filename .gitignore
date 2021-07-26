@@ -1,0 +1,8 @@
+node_modules
+.dccache
+tmp
+yarn-error.log
+.git
+.vscode
+build
+.env

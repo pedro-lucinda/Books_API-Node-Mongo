@@ -1,4 +1,4 @@
-# Books API (NODEJS)
+# Books API (NodeJS + Express + Typescript)
 
 - [Books API (NODEJS)](#books-api-nodejs)
   - [1. Description](#1-description)

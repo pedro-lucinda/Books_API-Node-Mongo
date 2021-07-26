@@ -3,6 +3,7 @@
 - [Books API (NODEJS)](#books-api-nodejs)
   - [1. Description](#1-description)
   - [2. Requirements](#2-requirements)
+  - [2.1 Extras](#21-extras)
   - [3. Techs](#3-techs)
   - [4. Scripts](#4-scripts)
 
@@ -14,6 +15,9 @@
 - [x] Pagination on book's listing
 - [x] Able to create book
 - [x] Able to get a single book information
+
+## 2.1 Extras
+- [x] Able to upload book's image
 
 ## 3. Techs
 

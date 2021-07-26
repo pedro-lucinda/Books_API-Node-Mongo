@@ -6,6 +6,7 @@ export interface IBook {
   name: string;
   description: string;
   author: string;
+  image?: any;
 }
 
 export interface IListBooksDTO {

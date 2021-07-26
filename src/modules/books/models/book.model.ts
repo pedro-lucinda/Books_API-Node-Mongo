@@ -23,6 +23,10 @@ export const BookSchema = new Schema(
       required: true,
       trim: true,
     },
+    image: {
+      type: String,
+      required: true,
+    },
   },
   {
     timestamps: true,

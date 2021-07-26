@@ -11,7 +11,7 @@
   "paths": {
     "/books": {
       "post": {
-        "tags": ["createBook"],
+        "tags": ["Create Book"],
         "summary": "Create a book",
         "description": "Create a new book",
         "requestBody": {
@@ -26,13 +26,16 @@
                     "required": false
                   },
                   "name": {
-                    "type": "string"
+                    "type": "string",
+                    "required": true
                   },
                   "author": {
-                    "type": "string"
+                    "type": "string",
+                    "required": true
                   },
                   "description": {
                     "type": "string",
+                    "required": true,
                     "minLength": 120
                   }
                 }
@@ -72,7 +75,7 @@
         }
       },
       "get": {
-        "tags": ["listBooks"],
+        "tags": ["List Books"],
         "summary": "List all books",
         "description": "List all books",
         "responses": {
@@ -111,7 +114,7 @@
     },
     "/books/{id}": {
       "get": {
-        "tags": ["getBook"],
+        "tags": ["Get a book"],
         "summary": "Get a single book by ID",
         "description": "Get a single book by ID",
         "parameters": [

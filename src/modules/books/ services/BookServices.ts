@@ -33,5 +33,10 @@ class BookServices implements IBookServices {
     await book.save();
     return book;
   }
+
+  async findByName(name: string): Promise<IBook> {
+    const book = await BookModel.findOne({ name });
+    return book;
+  }
 }
 export { BookServices };

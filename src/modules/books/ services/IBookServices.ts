@@ -18,6 +18,7 @@ interface IBookServices {
   list({ perPage, page }: IListBooksDTO): Promise<IBook[]>;
   create(body: DocumentDefinition<IBookDocument>): Promise<IBook>;
   findById(id: string): Promise<IBook>;
+  findByName(name: string): Promise<IBook>;
 }
 
 export { IBookServices };

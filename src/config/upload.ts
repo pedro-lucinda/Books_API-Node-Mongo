@@ -4,12 +4,12 @@ import { S3 } from "aws-sdk";
 import multer from "multer";
 import multerS3 from "multer-s3";
 
-export const bucketName = process.env.AWS_S3_NAME;
+const bucketName = process.env.AWS_S3_NAME;
 const region = process.env.AWS_S3_REGION;
 const accessKeyId = process.env.AWS_S3_ACCESS_KEY;
 const secretAccessKey = process.env.AWS_S3_SECRET_KEY;
 
-export const s3 = new S3({
+const s3 = new S3({
   region,
   accessKeyId,
   secretAccessKey,

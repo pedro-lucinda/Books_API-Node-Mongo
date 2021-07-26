@@ -1,5 +1,5 @@
-/* eslint-disable prefer-destructuring */
-/* eslint-disable consistent-return */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable no-extra-boolean-cast */
 import { Request, Response } from "express";
 
 import { IBook } from "../../ services/IBookServices";
@@ -9,9 +9,11 @@ class CreateBookController {
   async handle(req: Request, res: Response): Promise<IBook | Response> {
     const createBookUseCase = new CreateBookUseCase();
     const { body } = req;
-    const file = req.file as any;
+    const file = req?.file as any;
+
     const bookData = body;
-    if (file) {
+
+    if (!!file) {
       Object.assign(bookData, {
         image: `https://pedro-books-api.s3.sa-east-1.amazonaws.com/${file.key}`,
       });

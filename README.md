@@ -17,7 +17,7 @@
 - [x] Able to get a single book information
 
 ## 2.1 Extras
-- [x] Able to upload book's image
+- [x] Able to upload book's image (optinal)
 
 ## 3. Techs
 

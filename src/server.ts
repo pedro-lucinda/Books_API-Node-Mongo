@@ -1,16 +1,20 @@
 import cors from "cors";
 import dotenv from "dotenv";
 import express, { NextFunction, Request, Response } from "express";
+import swaggerUi from "swagger-ui-express";
 
 import "./database";
 import { AppError } from "./errors/AppError";
 import { router } from "./routes";
+import swaggerFile from "./swagger.json";
 
 dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(cors());
 app.use(router);
+
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
 app.use(
   (err: Error, request: Request, response: Response, next: NextFunction) => {

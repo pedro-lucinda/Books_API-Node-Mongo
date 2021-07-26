@@ -13,7 +13,7 @@ import {
 
 export const booksRouter = Router();
 
-booksRouter.get("/list", (req: Request, res: Response) => {
+booksRouter.get("/", (req: Request, res: Response) => {
   const listBooksController = new ListBooksController();
   return listBooksController.handle(req, res);
 });

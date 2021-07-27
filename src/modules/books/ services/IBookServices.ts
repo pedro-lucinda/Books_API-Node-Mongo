@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { DocumentDefinition } from "mongoose";
 
 import { IBookDocument } from "../models/book.model";
@@ -12,6 +13,7 @@ export interface IBook {
 export interface IListBooksDTO {
   perPage?: number;
   page?: number;
+  q?: string;
 }
 
 interface IBookServices {

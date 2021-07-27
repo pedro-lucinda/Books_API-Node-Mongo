@@ -5,11 +5,17 @@ import { BookModel } from "../models/book.model";
 import { IBook, IBookServices, IListBooksDTO } from "./IBookServices";
 
 class BookServices implements IBookServices {
-  async list({ perPage, page }: IListBooksDTO): Promise<IBook[]> {
+  async list({ perPage, page, q }: IListBooksDTO): Promise<IBook[]> {
     const pageToList = page - 1 || 0;
     const perPageToList = perPage || 10;
 
-    const books = await BookModel.find()
+    const books = await BookModel.find(
+      // if there is query param than filter by it
+      // the options are to remove case sensitivity
+      q && {
+        name: { $regex: q, $options: "i" },
+      }
+    )
       .limit(perPageToList)
       .skip(pageToList * perPageToList)
       .sort({

@@ -37,7 +37,7 @@ Api for adding and list books.
 - Docker
 - Yup
 - AWS S3
-- AWS EC2
+- Heroku
 - Typescript
 - Eslint
 - Prettier

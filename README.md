@@ -18,7 +18,7 @@ The frontend is on [Link](https://github.com/pedro-lucinda/Bookshelf-Mobile-Firs
 
 ## 2. Endpoint production
 
-- [Link](http://ec2-18-228-44-87.sa-east-1.compute.amazonaws.com:3333/books)
+- [Link](https://bookspedrolucinda.herokuapp.com/books)
 
 ## 2. Requirements
 

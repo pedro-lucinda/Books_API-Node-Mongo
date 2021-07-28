@@ -61,7 +61,10 @@ $ cd books_api
 # Install dependencies
 $ yarn install
 
-# Run the project
-$ yarn dev
+# Build on Docker
+$ docker build books_api
+
+# Run run on Docker
+$ docker-compose up
 # The server will initialize in the <http://localhost:3333>
 ```

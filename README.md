@@ -12,9 +12,6 @@
 
 Api for adding and list books. 
 
-### 1.1.2 Frontend
-The frontend is [here](https://github.com/pedro-lucinda/Bookshelf-Mobile-First)
-
 ### 1.2. Documentation 
   https://bookspedrolucinda.herokuapp.com/api-docs/
 
